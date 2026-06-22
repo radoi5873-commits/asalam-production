@@ -1656,7 +1656,7 @@ button, input, textarea {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: opacity 0.8s cubic-bezier(0.77, 0, 0.175, 1), visibility 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+    transition: opacity 0.3s cubic-bezier(0.77, 0, 0.175, 1), visibility 0.3s cubic-bezier(0.77, 0, 0.175, 1);
 }
 .page-loader.hidden {
     opacity: 0;
@@ -1679,7 +1679,7 @@ button, input, textarea {
     display: block;
     margin: 0 auto 25px;
     filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.3));
-    animation: loader-logo-glow 3s ease-in-out infinite;
+    animation: loader-logo-glow 1.5s ease-in-out infinite;
 }
 .loader-brand {
     font-family: var(--font-heading);
@@ -1714,7 +1714,7 @@ button, input, textarea {
     background: linear-gradient(90deg, transparent, var(--color-primary), var(--color-primary-hover));
     border-radius: 10px;
     box-shadow: 0 0 10px var(--color-primary);
-    animation: loader-fill-smooth 2s cubic-bezier(0.65, 0.05, 0.36, 1) forwards;
+    animation: loader-fill-smooth 0.5s cubic-bezier(0.65, 0.05, 0.36, 1) forwards;
 }
 @keyframes loader-fill-smooth {
     to { width: 100%; }

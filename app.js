@@ -495,7 +495,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (loader) {
         const hideLoader = () => {
             loader.classList.add('hidden');
-            setTimeout(() => loader.remove(), 800);
+            setTimeout(() => loader.remove(), 300);
         };
         
         let loaderHidden = false;
@@ -505,8 +505,8 @@ document.addEventListener('DOMContentLoaded', () => {
             hideLoader();
         };
 
-        // Safety timeout: hide loader after 500ms maximum to prevent stuck screen
-        setTimeout(triggerHide, 500);
+        // Safety timeout: hide loader after 300ms maximum to prevent stuck screen and feel faster
+        setTimeout(triggerHide, 300);
 
         // Also hide immediately if the page resources load faster
         window.addEventListener('load', triggerHide);
