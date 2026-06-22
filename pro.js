@@ -65,13 +65,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Hashing function using the browser's crypto API
+    async function hashPassword(pwd) {
+        const encoder = new TextEncoder();
+        const data = encoder.encode(pwd);
+        const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+        return Array.from(new Uint8Array(hashBuffer))
+            .map(b => b.toString(16).padStart(2, '0'))
+            .join('');
+    }
+
     if (proLoginForm) {
-        proLoginForm.addEventListener('submit', (e) => {
+        proLoginForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const password = proPassInput.value.trim();
+            const hashed = await hashPassword(password);
             
-            // Code d'accès : pro123
-            if (password === 'pro123' || password === 'admin123') {
+            // SHA-256 hashes of 'pro123' and 'admin123'
+            const hashPro = 'cb1513ece93b4a593042a5c181ab2e123260f197a51a92b758c1697839067669';
+            const hashAdmin = '240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9';
+            
+            if (hashed === hashPro || hashed === hashAdmin) {
                 sessionStorage.setItem('assalam_pro_logged', 'true');
                 showToast(currentLang === 'fr' ? 'Connexion réussie !' : 'Successfully logged in!', 'success');
                 proPassInput.value = '';

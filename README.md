@@ -19,7 +19,7 @@ Il intègre également un **Espace Gérant (Dashboard Pro)** complet permettant 
 * **Support Multilingue :** Traduction instantanée de tout le site en Français et en Anglais.
 
 ### 📊 Espace Professionnel (Dashboard Pro)
-Accessible via la route `/pro.html` avec le code d'accès : **`pro123`**
+Accessible via la route `/pro.html` avec le code d'accès professionnel.
 * **Statistiques Commerciales :** Suivi des visites réelles sur le site, nombre total de commandes initiées et estimation du chiffre d'affaires.
 * **Gestion du Catalogue :** Ajout de nouveaux produits personnalisés, modification des noms, descriptions, prix, catégories et statut du stock (Disponible / Rupture).
 * **Historique des Commandes :** Récapitulatif et suivi de toutes les commandes passées par les clients (Nom, Téléphone, Adresse, Panier, Montant total).
@@ -52,7 +52,7 @@ Accessible via la route `/pro.html` avec le code d'accès : **`pro123`**
 
 3. **Accéder à l'Espace Pro :**
    * Cliquez sur le lien **« Espace Pro »** dans le menu ou naviguez vers `pro.html`.
-   * Entrez le mot de passe : **`pro123`** ou **`admin123`**.
+   * Entrez le mot de passe professionnel sécurisé.
 
 ---
 
