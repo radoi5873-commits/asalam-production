@@ -493,12 +493,23 @@ document.addEventListener('DOMContentLoaded', () => {
        ========================================================================== */
     const loader = document.getElementById('pageLoader');
     if (loader) {
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                loader.classList.add('hidden');
-                setTimeout(() => loader.remove(), 800);
-            }, 300);
-        });
+        const hideLoader = () => {
+            loader.classList.add('hidden');
+            setTimeout(() => loader.remove(), 800);
+        };
+        
+        let loaderHidden = false;
+        const triggerHide = () => {
+            if (loaderHidden) return;
+            loaderHidden = true;
+            hideLoader();
+        };
+
+        // Safety timeout: hide loader after 500ms maximum to prevent stuck screen
+        setTimeout(triggerHide, 500);
+
+        // Also hide immediately if the page resources load faster
+        window.addEventListener('load', triggerHide);
     }
 
     /* ==========================================================================
