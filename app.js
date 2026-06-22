@@ -496,8 +496,8 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('load', () => {
             setTimeout(() => {
                 loader.classList.add('hidden');
-                setTimeout(() => loader.remove(), 600);
-            }, 2000);
+                setTimeout(() => loader.remove(), 800);
+            }, 300);
         });
     }
 
