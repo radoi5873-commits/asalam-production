@@ -1676,7 +1676,8 @@ button, input, textarea {
     width: 90px;
     height: 90px;
     object-fit: contain;
-    margin-bottom: 25px;
+    display: block;
+    margin: 0 auto 25px;
     filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.3));
     animation: loader-logo-glow 3s ease-in-out infinite;
 }
