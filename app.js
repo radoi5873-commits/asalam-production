@@ -33,11 +33,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load custom WhatsApp number if saved in localStorage
     const savedPhone = localStorage.getItem('assalam_wa_phone');
     if (savedPhone) {
-        const adminPhoneInput = document.getElementById('adminPhone');
-        if (adminPhoneInput) {
-            adminPhoneInput.value = savedPhone;
-            whatsappTarget = cleanPhoneNumber(savedPhone);
-        }
+        whatsappTarget = cleanPhoneNumber(savedPhone);
+        
+        // Update top bar and contact list info texts
+        const phoneTexts = document.querySelectorAll('.phone-text, .contact-info-item:nth-child(1) p');
+        phoneTexts.forEach(el => {
+            el.textContent = savedPhone;
+        });
     }
 
     /* ==========================================================================
@@ -267,29 +269,10 @@ document.addEventListener('DOMContentLoaded', () => {
        5. WHATSAPP CHECKOUT FORM SUBMISSION
        ========================================================================== */
     const orderForm = document.getElementById('orderForm');
-    const settingsToggle = document.getElementById('settingsToggle');
-    const settingsContent = document.getElementById('settingsContent');
-    const adminPhoneInput = document.getElementById('adminPhone');
-
-    // Toggle admin WhatsApp configurations
-    if (settingsToggle && settingsContent) {
-        settingsToggle.addEventListener('click', () => {
-            const isHidden = settingsContent.style.display === 'none';
-            settingsContent.style.display = isHidden ? 'block' : 'none';
-        });
-    }
-
-    if (adminPhoneInput) {
-        adminPhoneInput.addEventListener('input', (e) => {
-            whatsappTarget = cleanPhoneNumber(e.target.value);
-            localStorage.setItem('assalam_wa_phone', e.target.value);
-            
-            // Also update top bar and contact list info texts
-            const phoneTexts = document.querySelectorAll('.phone-text, .contact-info-item:nth-child(1) p');
-            phoneTexts.forEach(el => {
-                el.textContent = e.target.value;
-            });
-        });
+    // (WhatsApp phone number is managed from Espace Pro and loaded automatically above);
+    const savedPhone = localStorage.getItem('assalam_wa_phone');
+    if (savedPhone) {
+        document.querySelectorAll('.phone-text, .contact-info-item:nth-child(1) p').forEach(el => el.textContent = savedPhone);
     }
 
     function cleanPhoneNumber(numberStr) {
