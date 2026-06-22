@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Découvrez As-Salam Production, entreprise agroalimentaire à Cotonou (Bénin) spécialisée dans les produits sains et bios à base de maïs local : couscous, akloui, riz, pâte gambari et cassoulet.">
+    <meta name="keywords"
+        content="As-Salam Production, maïs bio, couscous de maïs, akloui Bénin, consommons local Bénin, agroalimentaire Cotonou, riz de maïs, pâte gambari, alimentation saine">
+    <meta name="author" content="As-Salam Production">
+    <title>As-Salam Production | L'excellence du maïs local & bio au Bénin</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS v3 CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: { 400: '#cca43b', 500: '#b58f30' },
+                        forest: { 50: '#eef5ed', 600: '#31572c', 700: '#233f20', 900: '#1e2520' },
+                        terra: '#e76f51',
+                        cream: '#fdfaf7',
+                        whatsapp: { 500: '#25d366', 600: '#20ba5a' },
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'Georgia', 'serif'],
+                        body: ['Outfit', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- AOS Animate On Scroll -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+</head>
+
+<body>
+
+    <!-- SCROLL PROGRESS BAR -->
+    <div id="scrollProgressBar" class="scroll-progress-bar"></div>
+
+    <!-- PROMO BANNER -->
+    <div id="promoBanner" class="promo-banner">
+        <div class="container promo-banner-content">
+            <div class="promo-left">
+                <span class="promo-badge">PROMO !</span>
+                <span class="promo-text" data-fr="10% de réduction sur le Couscous de Maïs avec le code SALAM10 !"
+                    data-en="10% off on Corn Couscous with the code SALAM10 !">10% de réduction sur le Couscous de Maïs
+                    avec le code SALAM10 !</span>
+            </div>
+            <div class="promo-right">
+                <span class="countdown-wrapper" data-fr="Finit dans : " data-en="Ends in: ">Finit dans : <span
+                        id="promoCountdown">--h --m --s</span></span>
+                <button id="promoClose" class="promo-close" aria-label="Fermer la promotion">&times;</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOADER -->
+    <div id="pageLoader" class="page-loader">
+        <div class="loader-content">
+            <img src="images/logo.png" alt="As-Salam" class="loader-logo">
+            <div class="loader-brand">As-Salam<span>Production</span></div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOP BAR (INFO) -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <span class="top-bar-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 9.92z" />
+                </svg>
+                <span class="phone-text">+229 01 96 85 77 71</span>
+            </span>
+            <span class="top-bar-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                </svg>
+                <a href="mailto:assalamprod@gmail.com">assalamprod@gmail.com</a>
+            </span>
+            <span class="top-bar-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="10" r="3" />
+                    <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 7 8 11.7z" />
+                </svg>
+                <span>Akpakpa, Cotonou, Bénin</span>
+            </span>
+            <!-- Language Switcher -->
+            <div class="lang-switcher">
+                <button id="langFR" class="lang-btn active">FR</button>
+                <span class="lang-divider">|</span>
+                <button id="langEN" class="lang-btn">EN</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER & NAVIGATION -->
+    <header class="main-header">
+        <div class="container nav-container">
+            <a href="#" class="logo-area">
+                <img src="images/logo.png" alt="As-Salam Production Logo" class="nav-logo">
+                <div class="logo-text">
+                    <span class="brand-name">As-Salam</span>
+                    <span class="brand-sub">Production</span>
+                </div>
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="#" class="nav-link active" data-fr="Accueil" data-en="Home">Accueil</a>
+                <a href="#about" class="nav-link" data-fr="À Propos" data-en="About">À Propos</a>
+                <a href="#products" class="nav-link" data-fr="Nos Produits" data-en="Products">Nos Produits</a>
+                <a href="#recipes" class="nav-link" data-fr="Idées Recettes" data-en="Recipes">Idées Recettes</a>
+                <a href="#contact" class="nav-link" data-fr="Contact" data-en="Contact">Contact</a>
+                <a href="pro.html" class="nav-link nav-link-pro" data-fr="Espace Pro" data-en="Pro Space"><i
+                        class="fa-solid fa-briefcase" style="font-size:0.85rem; margin-right:5px;"></i>Espace Pro</a>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- Dark Mode Toggle -->
+                <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Mode sombre">
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5" />
+                        <line x1="12" y1="1" x2="12" y2="3" />
+                        <line x1="12" y1="21" x2="12" y2="23" />
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                        <line x1="1" y1="12" x2="3" y2="12" />
+                        <line x1="21" y1="12" x2="23" y2="12" />
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                    </svg>
+                    <svg class="icon-moon" style="display:none" xmlns="http://www.w3.org/2000/svg" width="20"
+                        height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                    </svg>
+                </button>
+
+                <!-- Shopping Cart Icon -->
+                <button class="cart-trigger" id="cartTrigger" aria-label="Voir le panier">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1" />
+                        <circle cx="20" cy="21" r="1" />
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                    </svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+
+                <a href="#order-section" class="btn btn-primary btn-sm hide-mobile" data-fr="Commander"
+                    data-en="Order">Commander</a>
+
+                <!-- Burger Button -->
+                <button class="burger-menu" id="burgerMenu" aria-label="Menu Mobile">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <span class="badge badge-hero" data-aos="fade-down">Produits 100% Naturels & Béninois</span>
+            <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">Découvrez le Maïs <span class="highlight"
+                    id="typewriterText">Autrement</span></h1>
+            <p class="hero-desc" data-aos="fade-up" data-aos-delay="400">Sain, bio et savoureux. As-Salam Production
+                transforme le maïs local béninois pour vous proposer une alimentation saine, riche en énergie et sans
+                gluten.</p>
+            <div class="hero-actions" data-aos="fade-up" data-aos-delay="600">
+                <a href="#products" class="btn btn-primary btn-lg">Voir la gamme</a>
+                <a href="#about" class="btn btn-secondary btn-lg">Notre histoire</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- KEY FEATURES / BADGES -->
+    <section class="features-bar">
+        <div class="container features-grid">
+            <div class="feature-item" data-aos="fade-up" data-aos-delay="0">
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <div class="feature-text">
+                    <h3>Production 100% Bio</h3>
+                    <p>Sans additifs chimiques ni conservateurs artificiels.</p>
+                </div>
+            </div>
+            <div class="feature-item" data-aos="fade-up" data-aos-delay="150">
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                </div>
+                <div class="feature-text">
+                    <h3>Qualité & Hygiène</h3>
+                    <p>Transformation respectueuse des normes de sécurité.</p>
+                </div>
+            </div>
+            <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                    </svg>
+                </div>
+                <div class="feature-text">
+                    <h3>Consommons Local</h3>
+                    <p>Soutien aux agriculteurs du Bénin et commerce équitable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section about-section">
+        <div class="container about-grid">
+            <div class="about-image-container" data-aos="fade-right">
+                <img src="images/package.png" alt="Nos produits d'agro-food As-Salam" class="about-img">
+                <div class="about-floating-card">
+                    <span class="floating-number">0%</span>
+                    <span class="floating-text">Gluten &amp; Conservateurs</span>
+                </div>
+            </div>
+            <div class="about-text-content" data-aos="fade-left" data-aos-delay="200">
+                <span class="section-subtitle">Qui Sommes-Nous ?</span>
+                <h2 class="section-title">Valoriser nos richesses agricoles locales</h2>
+                <p class="about-p">Basée à Agla, Cotonou, <strong>As-Salam Production</strong> est une entreprise
+                    agroalimentaire béninoise passionnée par la transformation du maïs local. Notre mission est de faire
+                    redécouvrir le maïs, céréale d'excellence de notre terroir, sous des formes modernes, pratiques et
+                    hautement nutritionnelles.</p>
+                <p class="about-p">Nous croyons fermement au concept de <strong>« Consommons local »</strong>. En
+                    combinant savoir-faire traditionnel et rigueur de transformation moderne, nous créons des produits
+                    bio qui apportent de vrais délices dans vos plats tout en préservant votre santé.</p>
+
+                <div class="about-values">
+                    <div class="value-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span>Céréales soigneusement triées et lavées</span>
+                    </div>
+                    <div class="value-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span>Riche en fibres, vitamines et nutriments essentiels</span>
+                    </div>
+                    <div class="value-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span>Idéal pour les sportifs, les régimes et toute la famille</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS / CHIFFRES CLÉS -->
+    <section class="section stats-section">
+        <div class="container">
+            <div class="stats-grid" data-aos="fade-up">
+                <div class="stat-item">
+                    <div class="stat-icon">🌽</div>
+                    <span class="stat-number" data-target="5">0</span>
+                    <span class="stat-label">Produits phares</span>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">👨‍👩‍👧‍👦</div>
+                    <span class="stat-number" data-target="2500">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Familles servies</span>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">📦</div>
+                    <span class="stat-number" data-target="10000">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Paquets vendus</span>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">⭐</div>
+                    <span class="stat-number" data-target="100">0</span><span class="stat-suffix">%</span>
+                    <span class="stat-label">Produits naturels</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS CATALOG SECTION -->
+    <section id="products" class="section products-section bg-light">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <span class="section-subtitle">Notre Catalogue</span>
+                <h2 class="section-title">Notre Gamme Alimentaire 100% Maïs</h2>
+                <p class="section-desc">Découvrez nos 5 produits phares, faits maison avec amour et hygiène à Cotonou.
+                </p>
+            </div>
+
+            <!-- Category Filter Tabs -->
+            <div class="filter-container">
+                <button class="btn btn-filter active" data-filter="all">Tous nos produits</button>
+                <button class="btn btn-filter" data-filter="grains">Farines &amp; Grains</button>
+                <button class="btn btn-filter" data-filter="prets">Prêts à cuire</button>
+            </div>
+
+            <!-- SEARCH BAR -->
+            <div class="search-container" data-aos="fade-up">
+                <div class="search-wrapper">
+                    <input type="text" id="productSearch" placeholder="Rechercher un produit (ex: couscous, akloui...)"
+                        class="search-input">
+                    <span class="search-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8" />
+                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                        </svg>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="productsGrid">
+
+                <!-- Product 1: Couscous de Maïs -->
+                <div class="product-card" data-category="grains">
+                    <div class="product-img-wrapper">
+                        <img src="images/package.png" alt="Couscous de Maïs As-Salam" class="product-img">
+                        <span class="product-badge" data-fr="Populaire" data-en="Popular">Populaire</span>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-cat" data-fr="Farines &amp; Grains" data-en="Flours &amp; Grains">Farines
+                            &amp; Grains</span>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-val">5.0</span>
+                        </div>
+                        <h3 class="product-title" data-fr="Couscous de Maïs" data-en="Corn Couscous">Couscous de Maïs
+                        </h3>
+                        <p class="product-desc"
+                            data-fr="Une alternative saine, légère et sans gluten au couscous de blé traditionnel. Idéal avec vos sauces légumes, graine ou tomate."
+                            data-en="A healthy, light, gluten-free alternative to wheat couscous. Ideal with vegetable, seed, or tomato sauces.">
+                            Une alternative saine, légère et sans gluten au couscous de blé traditionnel. Idéal avec vos
+                            sauces légumes, graine ou tomate.</p>
+                        <div class="product-footer">
+                            <span class="product-price">1 500 F CFA</span>
+                            <button class="btn btn-primary btn-add-cart" data-id="1" data-name="Couscous de Maïs"
+                                data-price="1500">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                </svg>
+                                <span data-fr="Ajouter" data-en="Add">Ajouter</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2: La bouillie Akloui au maïs -->
+                <div class="product-card" data-category="grains">
+                    <div class="product-img-wrapper">
+                        <img src="images/package.png" alt="Bouillie Akloui au Maïs" class="product-img">
+                        <span class="product-badge" data-fr="Le Matin" data-en="Breakfast">Le Matin</span>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-cat" data-fr="Farines &amp; Grains" data-en="Flours &amp; Grains">Farines
+                            &amp; Grains</span>
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="rating-val">4.8</span>
+                        </div>
+                        <h3 class="product-title" data-fr="Bouillie Akloui de Maïs" data-en="Akloui Corn Porridge">
+                            Bouillie Akloui de Maïs</h3>
+                        <p class="product-desc"
+                            data-fr="Le célèbre Akloui béninois sous forme de farine granulée prête à l'emploi. Préparez une bouillie onctueuse en 10 minutes seulement."
+                            data-en="The famous Beninese Akloui in ready-to-use granulated flour form. Prepare a smooth porridge in just 10 minutes.">
+                            Le célèbre Akloui béninois sous forme de farine granulée prête à l'emploi. Préparez une
+                            bouillie onctueuse en 10 minutes seulement.</p>
+                        <div class="product-footer">
+                            <span class="product-price">1 200 F CFA</span>
+                            <button class="btn btn-primary btn-add-cart" data-id="2" data-name="Bouillie Akloui de Maïs"
+                                data-price="1200">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                </svg>
+                                <span data-fr="Ajouter" data-en="Add">Ajouter</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3: Le riz à base de maïs -->
+                <div class="product-card" data-category="prets">
+                    <div class="product-img-wrapper">
+                        <img src="images/package.png" alt="Riz de Maïs As-Salam" class="product-img">
+                        <span class="product-badge" data-fr="Nouveauté" data-en="New">Nouveauté</span>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-cat" data-fr="Prêts à cuire" data-en="Ready to Cook">Prêts à cuire</span>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-val">4.9</span>
+                        </div>
+                        <h3 class="product-title" data-fr="Riz de Maïs" data-en="Corn Rice">Riz de Maïs</h3>
+                        <p class="product-desc"
+                            data-fr="Du riz fabriqué uniquement à base de grains de maïs sélectionnés. Très digeste, il offre une texture agréable et un goût subtil et naturel."
+                            data-en="Rice made solely from selected corn kernels. Highly digestible, offering a pleasant texture and subtle natural flavor.">
+                            Du riz fabriqué uniquement à base de grains de maïs sélectionnés. Très digeste, il offre une
+                            texture agréable et un goût subtil et naturel.</p>
+                        <div class="product-footer">
+                            <span class="product-price">1 800 F CFA</span>
+                            <button class="btn btn-primary btn-add-cart" data-id="3" data-name="Riz de Maïs"
+                                data-price="1800">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                </svg>
+                                <span data-fr="Ajouter" data-en="Add">Ajouter</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4: La pâte gambari -->
+                <div class="product-card" data-category="prets">
+                    <div class="product-img-wrapper">
+                        <img src="images/package.png" alt="Pâte Gambari As-Salam" class="product-img">
+                        <span class="product-badge" data-fr="Tradition" data-en="Traditional">Tradition</span>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-cat" data-fr="Prêts à cuire" data-en="Ready to Cook">Prêts à cuire</span>
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="rating-val">4.7</span>
+                        </div>
+                        <h3 class="product-title" data-fr="Pâte Gambari" data-en="Gambari Paste">Pâte Gambari</h3>
+                        <p class="product-desc"
+                            data-fr="Farine spécialement dosée pour la préparation de la célèbre pâte Gambari béninoise. Un classique savoureux de notre table quotidienne."
+                            data-en="Specifically portioned flour for preparing the famous Beninese Gambari paste. A tasty classic for our daily table.">
+                            Farine spécialement dosée pour la préparation de la célèbre pâte Gambari béninoise. Un
+                            classique savoureux de notre table quotidienne.</p>
+                        <div class="product-footer">
+                            <span class="product-price">1 000 F CFA</span>
+                            <button class="btn btn-primary btn-add-cart" data-id="4" data-name="Pâte Gambari"
+                                data-price="1000">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                </svg>
+                                <span data-fr="Ajouter" data-en="Add">Ajouter</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5: Le cassoulet au maïs -->
+                <div class="product-card" data-category="prets">
+                    <div class="product-img-wrapper">
+                        <img src="images/package.png" alt="Cassoulet au Maïs" class="product-img">
+                        <span class="product-badge" data-fr="Exclusivité" data-en="Exclusive">Exclusivité</span>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-cat" data-fr="Prêts à cuire" data-en="Ready to Cook">Prêts à cuire</span>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-val">5.0</span>
+                        </div>
+                        <h3 class="product-title" data-fr="Cassoulet au Maïs" data-en="Corn Cassoulet">Cassoulet au Maïs
+                        </h3>
+                        <p class="product-desc"
+                            data-fr="Un mélange unique et savoureux de grains de maïs et de haricots, précuit et assaisonné selon les recettes familiales d'As-Salam."
+                            data-en="A unique, tasty blend of corn kernels and beans, precooked and seasoned according to As-Salam family recipes.">
+                            Un mélange unique et savoureux de grains de maïs et de haricots, précuit et assaisonné selon
+                            les recettes familiales d'As-Salam.</p>
+                        <div class="product-footer">
+                            <span class="product-price">2 000 F CFA</span>
+                            <button class="btn btn-primary btn-add-cart" data-id="5" data-name="Cassoulet au Maïs"
+                                data-price="2000">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                </svg>
+                                <span data-fr="Ajouter" data-en="Add">Ajouter</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SHOPPING CART & DYNAMIC WHATSAPP ORDER SECTION -->
+    <section id="order-section" class="section order-section">
+        <div class="container order-grid">
+
+            <div class="cart-details-card">
+                <h3 class="order-title">Votre Commande</h3>
+                <div id="cartItemsContainer" class="cart-items-container">
+                    <div class="empty-cart-msg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="9" cy="21" r="1" />
+                            <circle cx="20" cy="21" r="1" />
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                        </svg>
+                        <p>Votre panier est vide. Sélectionnez des délices ci-dessus pour composer votre commande.</p>
+                    </div>
+                </div>
+
+                <div class="cart-summary" id="cartSummary" style="display: none;">
+                    <div class="summary-line">
+                        <span>Sous-total</span>
+                        <span id="summarySubtotal">0 F CFA</span>
+                    </div>
+                    <div class="summary-line">
+                        <span>Livraison (Cotonou &amp; environs)</span>
+                        <span class="delivery-highlight">À convenir</span>
+                    </div>
+                    <div class="summary-line total-line">
+                        <span>Total estimé</span>
+                        <span id="summaryTotal">0 F CFA</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-form-card">
+                <div class="form-header">
+                    <h3 class="order-title">Valider ma commande</h3>
+                    <p>Vos produits seront livrés à domicile. La commande sera transmise directement par WhatsApp à
+                        As-Salam Production.</p>
+                </div>
+
+                <!-- Quick Settings for testing the WhatsApp Number -->
+                <div class="whatsapp-settings-box">
+                    <div class="settings-toggle" id="settingsToggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3" />
+                            <path
+                                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                        </svg>
+                        <span>Configuration du numéro WhatsApp</span>
+                    </div>
+                    <div class="settings-content" id="settingsContent" style="display: none;">
+                        <label for="adminPhone">Numéro WhatsApp de l'entreprise :</label>
+                        <input type="text" id="adminPhone" value="+229 91 48 51 69" placeholder="Ex: +22991485169">
+                        <span class="help-text">Modifiez ce numéro pour recevoir ou tester les commandes WhatsApp
+                            réelles.</span>
+                    </div>
+                </div>
+
+                <form id="orderForm" class="order-form">
+                    <div class="form-group">
+                        <label for="clientName">Votre Nom Complet *</label>
+                        <input type="text" id="clientName" required placeholder="Ex: Jean Houndékon">
+                    </div>
+                    <div class="form-group">
+                        <label for="clientPhone">Numéro de Téléphone / WhatsApp *</label>
+                        <input type="tel" id="clientPhone" required placeholder="Ex: +229 97 12 34 56">
+                    </div>
+                    <div class="form-group">
+                        <label for="clientLocation">Adresse de livraison (Quartier, Ville) *</label>
+                        <input type="text" id="clientLocation" required
+                            placeholder="Ex: Agla, face Supermarché World Market, Cotonou">
+                    </div>
+                    <div class="form-group">
+                        <label for="clientNotes">Instructions ou demandes spéciales (Optionnel)</label>
+                        <textarea id="clientNotes" rows="3"
+                            placeholder="Ex: Je souhaite une livraison vendredi après-midi, emballage cadeau..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-whatsapp btn-full" id="btnSubmitOrder" disabled>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                        </svg>
+                        Envoyer ma commande via WhatsApp
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- RECIPES SECTION -->
+    <section id="recipes" class="section recipes-section bg-light">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <span class="section-subtitle">Idées Recettes</span>
+                <h2 class="section-title">Comment cuisiner nos produits ?</h2>
+                <p class="section-desc">Des pas-à-pas faciles pour préparer des mets sains et savoureux au quotidien.
+                </p>
+            </div>
+
+            <div class="recipes-tabs-container">
+                <div class="recipes-nav">
+                    <button class="recipe-tab active" data-recipe="akloui">La Bouillie d'Akloui</button>
+                    <button class="recipe-tab" data-recipe="couscous">Le Couscous au poisson</button>
+                    <button class="recipe-tab" data-recipe="riz">Riz de Maïs sauté</button>
+                </div>
+
+                <div class="recipe-content-wrapper">
+
+                    <!-- Recipe 1: Akloui -->
+                    <div class="recipe-card-content active" id="recipe-akloui">
+                        <div class="recipe-grid">
+                            <div class="recipe-info-col">
+                                <span class="recipe-time">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    Préparation : 10 min
+                                </span>
+                                <h3>La Bouillie Akloui au Maïs Crémeuse</h3>
+                                <p>Un déjeuner traditionnel béninois réconfortant et rapide à préparer pour faire le
+                                    plein d'énergie.</p>
+
+                                <h4>Ingrédients :</h4>
+                                <ul>
+                                    <li>1 tasse de Farine Akloui As-Salam</li>
+                                    <li>3 tasses d'eau</li>
+                                    <li>Sucre (selon vos préférences)</li>
+                                    <li>Lait concentré ou en poudre</li>
+                                    <li>Citron ou gingembre (Optionnel)</li>
+                                </ul>
+                            </div>
+                            <div class="recipe-steps-col">
+                                <h4>Instructions :</h4>
+                                <ol class="steps-list">
+                                    <li>Dans une casserole, versez les 3 tasses d'eau et portez à ébullition.</li>
+                                    <li>Prélevez un peu d'eau chaude pour diluer la farine Akloui As-Salam dans un bol
+                                        afin d'obtenir une pâte sans grumeaux.</li>
+                                    <li>Versez doucement le mélange dilué dans la casserole d'eau frémissante tout en
+                                        remuant constamment à l'aide d'une spatule en bois.</li>
+                                    <li>Laissez cuire à feu doux pendant 5 à 7 minutes en continuant de remuer jusqu'à
+                                        ce que la bouillie devienne consistante et translucide.</li>
+                                    <li>Retirez du feu. Ajoutez du lait, du sucre et éventuellement quelques gouttes de
+                                        jus de citron pour relever le goût. Servez chaud avec des beignets de haricot
+                                        (Akassa ou Koko).</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recipe 2: Couscous -->
+                    <div class="recipe-card-content" id="recipe-couscous">
+                        <div class="recipe-grid">
+                            <div class="recipe-info-col">
+                                <span class="recipe-time">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    Préparation : 25 min
+                                </span>
+                                <h3>Couscous de Maïs au Poisson et Sauce Légumes</h3>
+                                <p>Un plat principal léger, gourmand et plein de couleurs, riche en fibres et minéraux.
+                                </p>
+
+                                <h4>Ingrédients :</h4>
+                                <ul>
+                                    <li>250g de Couscous de Maïs As-Salam</li>
+                                    <li>1 cuillère à soupe d'huile d'olive ou de palme</li>
+                                    <li>Poisson frais frit ou braisé</li>
+                                    <li>Légumes (carottes, poivrons, oignons, tomates)</li>
+                                    <li>Épices locales (ail, piment, poivre vert, gingembre)</li>
+                                </ul>
+                            </div>
+                            <div class="recipe-steps-col">
+                                <h4>Instructions :</h4>
+                                <ol class="steps-list">
+                                    <li>Humectez le couscous de maïs As-Salam avec un peu d'eau tiède salée et laissez
+                                        reposer 5 minutes pour qu'il gonfle.</li>
+                                    <li>Faites cuire le couscous à la vapeur dans un couscoussier pendant environ 15
+                                        minutes.</li>
+                                    <li>Pendant ce temps, préparez votre sauce en faisant revenir dans une poêle les
+                                        oignons émincés, l'ail, les poivrons et les carottes coupées en dés avec un
+                                        filet d'huile.</li>
+                                    <li>Incorporez la purée de tomate fraîche et laissez mijoter 10 minutes. Ajoutez le
+                                        poisson.</li>
+                                    <li>Une fois le couscous cuit, égrenez-le doucement avec une fourchette, puis
+                                        servez-le chaud accompagné de la sauce de légumes colorée et du poisson.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recipe 3: Riz de Maïs -->
+                    <div class="recipe-card-content" id="recipe-riz">
+                        <div class="recipe-grid">
+                            <div class="recipe-info-col">
+                                <span class="recipe-time">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    Préparation : 20 min
+                                </span>
+                                <h3>Riz de Maïs Sauté aux Petits Légumes</h3>
+                                <p>Une façon originale et délicieuse de consommer le maïs en grains fins à la façon d'un
+                                    riz cantonais africain.</p>
+
+                                <h4>Ingrédients :</h4>
+                                <ul>
+                                    <li>300g de Riz de Maïs As-Salam</li>
+                                    <li>100g de petits pois et morceaux de carottes</li>
+                                    <li>2 oeufs battus</li>
+                                    <li>Blanc de poulet émietté (optionnel)</li>
+                                    <li>Oignons verts, ail moulu, sauce soja local ou sel</li>
+                                </ul>
+                            </div>
+                            <div class="recipe-steps-col">
+                                <h4>Instructions :</h4>
+                                <ol class="steps-list">
+                                    <li>Lavez le Riz de Maïs As-Salam puis faites-le cuire dans de l'eau bouillante
+                                        salée pendant 12 minutes (quantité d'eau équivalente à 2 fois le volume de riz).
+                                        Égouttez et laissez refroidir.</li>
+                                    <li>Dans un wok ou une grande poêle, faites brouiller les oeufs avec un peu d'huile
+                                        puis réservez.</li>
+                                    <li>Faites sauter les légumes (carottes, petits pois, oignons) et le poulet émietté
+                                        à feu vif avec l'ail pendant 5 minutes.</li>
+                                    <li>Ajoutez le Riz de Maïs cuit et refroidi dans la poêle, versez les oeufs
+                                        brouillés.</li>
+                                    <li>Remuez vigoureusement le tout à feu vif pendant 3 minutes. Assaisonnez de sel ou
+                                        de sauce soja, parsemez d'oignons verts ciselés et servez aussitôt.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="section testimonials-section">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <span class="section-subtitle">Témoignages</span>
+                <h2 class="section-title">Ce que disent nos clients</h2>
+                <p class="section-desc">Des retours authentiques recueillis après nos dégustations et livraisons à
+                    Cotonou.</p>
+            </div>
+
+            <div class="testimonials-grid">
+
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="testimonial-text">J'ai découvert As-Salam lors de leur dégustation au supermarché World
+                        Market à Agla. Leur bouillie Akloui est fantastique, très propre, fine et facile à cuisiner. Mes
+                        enfants l'adorent pour le petit-déjeuner !</p>
+                    <div class="testimonial-user">
+                        <div class="user-avatar">AD</div>
+                        <div class="user-info">
+                            <h4>Ablavi D.</h4>
+                            <span>Cliente fidèle - Agla, Cotonou</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="testimonial-text">Le couscous de maïs est parfait pour les personnes qui font attention à
+                        leur alimentation ou qui sont intolérantes au gluten. Il est très léger à digérer pour le dîner.
+                        Je recommande à 100%.</p>
+                    <div class="testimonial-user">
+                        <div class="user-avatar">MK</div>
+                        <div class="user-info">
+                            <h4>Marc K.</h4>
+                            <span>Nutritionniste - Fidjrossè</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="testimonial-text">Le système de commande WhatsApp est super pratique. J'ai commandé 3
+                        paquets de Riz de Maïs et 2 paquets de pâte Gambari, j'ai été livré directement au bureau
+                        l'après-midi même. Très bon service !</p>
+                    <div class="testimonial-user">
+                        <div class="user-avatar">EO</div>
+                        <div class="user-info">
+                            <h4>Euloge O.</h4>
+                            <span>Cadre d'entreprise - Cadjèhoun</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIE PHOTOS -->
+    <section id="gallery" class="section gallery-section">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <span class="section-subtitle">Notre Galerie</span>
+                <h2 class="section-title">En images</h2>
+                <p class="section-desc">Découvrez nos produits, notre savoir-faire et les moments de dégustation.</p>
+            </div>
+            <div class="gallery-grid" data-aos="fade-up" data-aos-delay="200">
+                <div class="gallery-item gallery-item-lg"><img src="images/hero.png" alt="Champ de maïs">
+                    <div class="gallery-overlay"><span>Nos champs</span></div>
+                </div>
+                <div class="gallery-item gallery-item-lg"><img src="images/package.png" alt="Produits emballés">
+                    <div class="gallery-overlay"><span>Emballage</span></div>
+                </div>
+                <div class="gallery-item gallery-item-lg"><img src="images/hero.png" alt="Préparation">
+                    <div class="gallery-overlay"><span>Préparation</span></div>
+                </div>
+                <div class="gallery-item gallery-item-lg"><img src="images/package.png" alt="Gamme complète">
+                    <div class="gallery-overlay"><span>Notre Gamme</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="section faq-section bg-light">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <span class="section-subtitle">FAQ</span>
+                <h2 class="section-title">Questions fréquentes</h2>
+                <p class="section-desc">Tout ce que vous devez savoir sur nos produits et services.</p>
+            </div>
+            <div class="faq-container" data-aos="fade-up" data-aos-delay="200">
+                <div class="faq-item">
+                    <button class="faq-question"><span>Vos produits contiennent-ils du gluten ?</span><svg
+                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></button>
+                    <div class="faq-answer">
+                        <p>Non ! Tous nos produits sont fabriqués à 100% à base de maïs local, une céréale naturellement
+                            sans gluten. Ils conviennent parfaitement aux personnes intolérantes ou cœliaques.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question"><span>Où puis-je acheter vos produits ?</span><svg
+                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></button>
+                    <div class="faq-answer">
+                        <p>Nos produits sont disponibles directement via notre site (commande WhatsApp), au supermarché
+                            World Market à Agla, et dans plusieurs boutiques partenaires à Cotonou. Contactez-nous pour
+                            connaître le point de vente le plus proche.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question"><span>Quelle est la durée de conservation ?</span><svg
+                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></button>
+                    <div class="faq-answer">
+                        <p>Nos produits se conservent entre 3 et 6 mois selon la variété, à l'abri de l'humidité et de
+                            la chaleur. Chaque emballage indique la date de péremption.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question"><span>Livrez-vous en dehors de Cotonou ?</span><svg
+                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></button>
+                    <div class="faq-answer">
+                        <p>Oui, nous livrons dans tout le Grand Cotonou (Abomey-Calavi, Sèmè-Kpodji, Porto-Novo). Pour
+                            les autres villes du Bénin, contactez-nous par WhatsApp pour organiser l'envoi.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question"><span>Comment passer une commande ?</span><svg
+                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></button>
+                    <div class="faq-answer">
+                        <p>C'est simple ! Ajoutez vos produits au panier sur notre site, remplissez vos coordonnées et
+                            validez. Votre commande sera envoyée directement par WhatsApp à notre équipe qui vous
+                            confirmera la livraison.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARTENAIRES -->
+    <section class="section partners-section">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <span class="section-subtitle">Ils nous font confiance</span>
+                <h2 class="section-title">Nos Partenaires</h2>
+            </div>
+            <div class="partners-marquee" data-aos="fade-up" data-aos-delay="200">
+                <div class="partners-track">
+                    <div class="partner-item">
+                        <div class="partner-logo">🏪 World Market</div>
+                    </div>
+                    <div class="partner-item">
+                        <div class="partner-logo">🏬 Erevan Supermarché</div>
+                    </div>
+                    <div class="partner-item">
+                        <div class="partner-logo">🛒 Cash Center</div>
+                    </div>
+                    <div class="partner-item">
+                        <div class="partner-logo">🏪 Bénin Market</div>
+                    </div>
+                    <div class="partner-item">
+                        <div class="partner-logo">🌍 Made in Bénin</div>
+                    </div>
+                    <div class="partner-item">
+                        <div class="partner-logo">🏪 World Market</div>
+                    </div>
+                    <div class="partner-item">
+                        <div class="partner-logo">🏬 Erevan Supermarché</div>
+                    </div>
+                    <div class="partner-item">
+                        <div class="partner-logo">🛒 Cash Center</div>
+                    </div>
+                    <div class="partner-item">
+                        <div class="partner-logo">🏪 Bénin Market</div>
+                    </div>
+                    <div class="partner-item">
+                        <div class="partner-logo">🌍 Made in Bénin</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="section newsletter-section">
+        <div class="container">
+            <div class="newsletter-card" data-aos="zoom-in">
+                <div class="newsletter-text">
+                    <h2>Restez informé de nos nouveautés</h2>
+                    <p>Recevez nos promotions, nouvelles recettes et actualités directement dans votre boîte mail.</p>
+                </div>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Votre adresse email" required id="newsletterEmail">
+                    <button type="submit" class="btn btn-primary">S'inscrire</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section contact-section bg-light">
+        <div class="container contact-grid">
+
+            <div class="contact-info-card" data-aos="fade-right">
+                <span class="section-subtitle">Nous Contacter</span>
+                <h2 class="section-title">As-Salam Production à votre écoute</h2>
+                <p class="contact-p">Vous avez une question sur nos produits, un partenariat de distribution ou vous
+                    souhaitez passer une commande spécifique ? N'hésitez pas à nous contacter.</p>
+
+                <div class="contact-info-list">
+                    <div class="contact-info-item">
+                        <div class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 9.92z" />
+                            </svg>
+                        </div>
+                        <div class="info-texts">
+                            <h4>Téléphone &amp; WhatsApp</h4>
+                            <p>+229 91 48 51 69</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                        </div>
+                        <div class="info-texts">
+                            <h4>Adresse Email</h4>
+                            <p><a href="mailto:assalamprod@gmail.com">assalamprod@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="10" r="3" />
+                                <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 7 8 11.7z" />
+                            </svg>
+                        </div>
+                        <div class="info-texts">
+                            <h4>Siège Social</h4>
+                            <p>Quartier Agla (non loin du supermarché World Market), Cotonou, Bénin</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links-container">
+                    <h4>Suivez-nous sur les réseaux</h4>
+                    <div class="social-links">
+                        <a href="https://web.facebook.com/profile.php?id=100063979413137" target="_blank"
+                            class="social-link-item fb" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link-item wa" aria-label="WhatsApp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-card" data-aos="fade-left" data-aos-delay="200">
+                <h3>Envoyez un message rapide</h3>
+                <form id="contactForm" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactName">Nom complet</label>
+                            <input type="text" id="contactName" required placeholder="Votre nom">
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Adresse email</label>
+                            <input type="email" id="contactEmail" required placeholder="Votre email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactSubject">Sujet</label>
+                        <input type="text" id="contactSubject" required placeholder="Sujet de votre message">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMessage">Message</label>
+                        <textarea id="contactMessage" rows="5" required
+                            placeholder="Écrivez votre message ici..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13" />
+                            <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                        </svg>
+                        Envoyer le message
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand-col">
+                <a href="#" class="logo-area">
+                    <img src="images/logo.png" alt="As-Salam Production Logo" class="footer-logo">
+                    <div class="logo-text">
+                        <span class="brand-name">As-Salam</span>
+                        <span class="brand-sub">Production</span>
+                    </div>
+                </a>
+                <p class="footer-brand-desc">Valoriser la culture du maïs local béninois à travers des aliments sains,
+                    bio et riches en goût. Notre mission est d'amener de vrais délices dans vos plats.</p>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>Liens Rapides</h4>
+                <div class="footer-links">
+                    <a href="#">Accueil</a>
+                    <a href="#about">À Propos</a>
+                    <a href="#products">Nos Produits</a>
+                    <a href="#recipes">Recettes</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+
+            <div class="footer-products-col">
+                <h4>Nos Produits</h4>
+                <div class="footer-links">
+                    <a href="#products">Couscous de Maïs</a>
+                    <a href="#products">Bouillie Akloui de Maïs</a>
+                    <a href="#products">Riz de Maïs</a>
+                    <a href="#products">Pâte Gambari</a>
+                    <a href="#products">Cassoulet de Maïs</a>
+                </div>
+            </div>
+
+            <div class="footer-hours-col">
+                <h4>Horaires d'Ouverture</h4>
+                <ul class="hours-list">
+                    <li><span>Lundi - Vendredi :</span> <span>8h00 - 18h30</span></li>
+                    <li><span>Samedi :</span> <span>9h00 - 16h00</span></li>
+                    <li><span>Dimanche :</span> <span>Fermé</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-content">
+                <p>&copy; 2026 As-Salam Production. Tous droits réservés. Conçu pour la promotion de la consommation
+                    locale au Bénin.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Mentions Légales</a>
+                    <a href="#">Politique de Confidentialité</a>
+                    <a href="pro.html" data-fr="Espace Pro" data-en="Pro Space">Espace Pro</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PRODUCT MODAL -->
+    <div class="product-modal-overlay" id="productModal">
+        <div class="product-modal">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-body">
+                <div class="modal-img-wrapper"><img id="modalImg" src="" alt=""></div>
+                <div class="modal-info">
+                    <span class="modal-cat" id="modalCat"></span>
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalDesc"></p>
+                    <div class="modal-price" id="modalPrice"></div>
+                    <button class="btn btn-primary btn-lg modal-add-btn" id="modalAddBtn">Ajouter au panier</button>
+                    <!-- Share Product -->
+                    <div class="modal-share">
+                        <span data-fr="Partager ce produit :" data-en="Share this product:">Partager ce produit :</span>
+                        <div class="share-buttons">
+                            <button class="share-btn share-wa" id="modalShareWa" aria-label="Partager sur WhatsApp">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.557-5.343 11.897-11.95 11.897-2.004 0-3.974-.5-5.729-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.858.002-2.634-1.025-5.11-2.89-6.978C16.474 1.9 14.004.873 11.3.873c-5.436 0-9.862 4.42-9.866 9.86-.001 1.768.463 3.49 1.343 5.011l-.99 3.618 3.7-.97z" />
+                                </svg>
+                            </button>
+                            <button class="share-btn share-fb" id="modalShareFb" aria-label="Partager sur Facebook">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                                </svg>
+                            </button>
+                            <button class="share-btn share-copy" id="modalShareCopy" aria-label="Copier le lien">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/22991485169" target="_blank" class="floating-whatsapp" id="floatingWa" aria-label="WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white" stroke="none">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+    </a>
+
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" id="backToTop" aria-label="Retour en haut">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15" />
+        </svg>
+    </button>
+
+    <!-- TOAST CONTAINER -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- COOKIE BANNER -->
+    <div id="cookieBanner" class="cookie-banner hidden">
+        <div class="cookie-content">
+            <p data-fr="Ce site utilise des cookies pour améliorer votre expérience. 🍪"
+                data-en="This site uses cookies to improve your experience. 🍪">Ce site utilise des cookies pour
+                améliorer votre expérience. 🍪</p>
+            <div class="cookie-buttons">
+                <button id="cookieAccept" class="btn btn-primary btn-sm" data-fr="Accepter"
+                    data-en="Accept">Accepter</button>
+                <button id="cookieRefuse" class="btn btn-secondary btn-sm" data-fr="Refuser"
+                    data-en="Refuse">Refuser</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightboxModal" class="lightbox-modal">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightboxImg" alt="Lightbox Image">
+        <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
+
+    <!-- JS Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="app.js"></script>
+    <script>
+        AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 80 });
+    </script>
+</body>
+
+</html>

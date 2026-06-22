@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-fr="Espace Pro - As-Salam Production" data-en="Pro Space - As-Salam Production">Espace Pro - As-Salam Production</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pro.css">
+    <style>
+        @media (max-width: 768px) {
+            .pro-tab span {
+                display: none !important;
+            }
+            .pro-tab i {
+                font-size: 1.25rem !important;
+            }
+            .pro-tab {
+                padding: 12px 10px !important;
+                justify-content: center !important;
+                flex: 1 !important;
+            }
+            #proNavLogoutBtn span,
+            #proLogoutBtn span {
+                display: none !important;
+            }
+            #proNavLogoutBtn i,
+            #proLogoutBtn i {
+                margin-right: 0 !important;
+            }
+            #proNavLogoutBtn,
+            #proLogoutBtn {
+                padding: 8px 12px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SCROLL PROGRESS BAR -->
+    <div class="scroll-progress-bar" id="scrollBar"></div>
+
+    <!-- TOP BAR (INFO) -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <span class="top-bar-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 9.92z"/></svg>
+                <span class="phone-text">+229 97 00 00 00</span>
+            </span>
+            <span class="top-bar-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <a href="mailto:assalamprod@gmail.com">assalamprod@gmail.com</a>
+            </span>
+            <span class="top-bar-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 7 8 11.7z"/></svg>
+                <span>Agla, Cotonou, Bénin</span>
+            </span>
+            <!-- Language Switcher -->
+            <div class="lang-switcher">
+                <button id="langFR" class="lang-btn active">FR</button>
+                <span class="lang-divider">|</span>
+                <button id="langEN" class="lang-btn">EN</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER & NAVIGATION -->
+    <header class="main-header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-area">
+                <img src="images/logo.png" alt="As-Salam Production Logo" class="nav-logo">
+                <div class="logo-text">
+                    <span class="brand-name">As-Salam</span>
+                    <span class="brand-sub">Production</span>
+                </div>
+            </a>
+            
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link" data-fr="Accueil" data-en="Home">Accueil</a>
+                <a href="index.html#about" class="nav-link" data-fr="À Propos" data-en="About">À Propos</a>
+                <a href="index.html#products" class="nav-link" data-fr="Nos Produits" data-en="Products">Nos Produits</a>
+                <a href="index.html#recipes" class="nav-link" data-fr="Idées Recettes" data-en="Recipes">Idées Recettes</a>
+                <a href="index.html#contact" class="nav-link" data-fr="Contact" data-en="Contact">Contact</a>
+                <a href="pro.html" class="nav-link active nav-link-pro" data-fr="Espace Pro" data-en="Pro Space"><i class="fa-solid fa-briefcase" style="font-size:0.85rem; margin-right:5px;"></i>Espace Pro</a>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- Dark Mode Toggle -->
+                <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Mode sombre">
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    <svg class="icon-moon" style="display:none" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+
+                <a href="index.html" class="btn btn-secondary btn-sm btn-back-pro" data-fr="Retour" data-en="Back">Retour</a>
+                
+                <!-- Header Logout Button (visible only when logged in) -->
+                <button class="btn btn-secondary btn-sm" id="proNavLogoutBtn" style="display: none; background-color: rgba(225, 29, 72, 0.15); color: #e11d48; border: 1px solid rgba(225, 29, 72, 0.25); font-weight: 700; margin-left: 5px;">
+                    <i class="fa-solid fa-right-from-bracket" style="margin-right: 5px;"></i><span data-fr="Déconnexion" data-en="Logout">Déconnexion</span>
+                </button>
+                
+                <!-- Burger Button -->
+                <button class="burger-menu" id="burgerMenu" aria-label="Menu Mobile">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- PORTAL HERO -->
+    <section class="pro-hero">
+        <div class="container text-center animate-fade-in">
+            <span class="pro-badge" data-fr="Espace Professionnel" data-en="Professional Portal">Espace Professionnel</span>
+        </div>
+    </section>
+
+    <!-- PRO CONTAINER -->
+    <main class="pro-main container">
+
+        <!-- LOGIN BLOCK -->
+        <div id="proLoginBlock" class="pro-card login-card animate-scale-up">
+            <div class="text-center">
+                <div class="key-icon-wrapper">
+                    <i class="fa-solid fa-key"></i>
+                </div>
+                <h2 data-fr="Authentification Gérant" data-en="Manager Authentication">Authentification Gérant</h2>
+                <p data-fr="Saisissez votre code d'accès professionnel." data-en="Enter your professional access code.">Saisissez votre code d'accès professionnel.</p>
+            </div>
+            
+            <form id="proLoginForm" class="pro-form text-center">
+                <div class="form-group text-left">
+                    <label for="proPassInput" data-fr="Code d'accès" data-en="Access Code">Code d'accès</label>
+                    <input type="password" id="proPassInput" placeholder="Ex: pro123" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-full">
+                    <i class="fa-solid fa-unlock"></i> <span data-fr="Se connecter" data-en="Log In">Se connecter</span>
+                </button>
+            </form>
+        </div>
+
+        <!-- AUTHENTICATED PANEL -->
+        <div id="proPanelBlock" class="pro-panel-block" style="display: none;">
+            
+            <!-- Dashboard Stats & Header -->
+            <div class="pro-panel-header">
+                <div>
+                    <h2 data-fr="Espace Pro As-Salam" data-en="As-Salam Pro Space">Espace Pro As-Salam</h2>
+                    <p data-fr="Gérez l'ensemble des activités de la boutique." data-en="Manage all the shop's activities.">Gérez l'ensemble des activités de la boutique.</p>
+                </div>
+                <button class="btn btn-secondary btn-sm" id="proLogoutBtn">
+                    <i class="fa-solid fa-right-from-bracket"></i> <span data-fr="Déconnexion" data-en="Logout">Déconnexion</span>
+                </button>
+            </div>
+
+            <!-- Stats grid -->
+            <div class="pro-stats-grid">
+                <div class="pro-stat-card">
+                    <div class="stat-icon-wrap"><i class="fa-solid fa-users"></i></div>
+                    <div>
+                        <h4 data-fr="Visites Uniques" data-en="Unique Visits">Visites Uniques</h4>
+                        <span class="stat-value" id="proStatVisits">0</span>
+                    </div>
+                </div>
+                <div class="pro-stat-card">
+                    <div class="stat-icon-wrap orders"><i class="fa-solid fa-receipt"></i></div>
+                    <div>
+                        <h4 data-fr="Commandes WhatsApp" data-en="WhatsApp Orders">Commandes WhatsApp</h4>
+                        <span class="stat-value" id="proStatOrders">0</span>
+                    </div>
+                </div>
+                <div class="pro-stat-card">
+                    <div class="stat-icon-wrap revenue"><i class="fa-solid fa-wallet"></i></div>
+                    <div>
+                        <h4 data-fr="Ventes Estimées" data-en="Estimated Sales">Ventes Estimées</h4>
+                        <span class="stat-value" id="proStatSales">0 F CFA</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nav Tabs -->
+            <div class="pro-tabs">
+                <button class="pro-tab active" data-tab="proTabCatalog">
+                    <i class="fa-solid fa-basket-shopping"></i> <span data-fr="Gestion Catalogue" data-en="Catalog Manager">Gestion Catalogue</span>
+                </button>
+                <button class="pro-tab" data-tab="proTabOrders">
+                    <i class="fa-solid fa-list-check"></i> <span data-fr="Suivi des Commandes" data-en="Orders List">Suivi des Commandes</span>
+                </button>
+                <button class="pro-tab" data-tab="proTabSettings">
+                    <i class="fa-solid fa-gears"></i> <span data-fr="Configuration & Pubs" data-en="Settings & Promos">Configuration & Pubs</span>
+                </button>
+            </div>
+
+            <!-- Tab 1: Catalog -->
+            <div class="pro-tab-content active" id="proTabCatalog">
+                <div class="pro-card">
+                    <div class="pro-card-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+                        <div>
+                            <h3 data-fr="Produits du Catalogue" data-en="Catalog Products">Produits du Catalogue</h3>
+                            <p class="pro-card-subtitle" data-fr="Modifiez les informations des produits en direct ou changez le statut des stocks." data-en="Modify product information in real-time or change stock status.">Modifiez les informations des produits en direct ou changez le statut des stocks.</p>
+                        </div>
+                        <button class="btn btn-primary btn-sm" id="proAddProductBtn">
+                            <i class="fa-solid fa-plus" style="margin-right: 5px;"></i> <span data-fr="Nouveau Produit" data-en="New Product">Nouveau Produit</span>
+                        </button>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="pro-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th data-fr="Produit" data-en="Product">Produit</th>
+                                    <th data-fr="Catégorie" data-en="Category">Catégorie</th>
+                                    <th data-fr="Prix de vente" data-en="Retail Price">Prix de vente</th>
+                                    <th data-fr="Disponibilité" data-en="Stock Status">Disponibilité</th>
+                                    <th data-fr="Action" data-en="Action">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="proCatalogTableBody">
+                                <!-- Dynamic catalog items -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: Orders -->
+            <div class="pro-tab-content" id="proTabOrders">
+                <div class="pro-card">
+                    <div class="pro-card-header">
+                        <h3 data-fr="Dernières Commandes Clients" data-en="Recent Customer Orders">Dernières Commandes Clients</h3>
+                        <p class="pro-card-subtitle" data-fr="Liste des commandes déclenchées par les clients du site." data-en="List of orders triggered by the website visitors.">Liste des commandes déclenchées par les clients du site.</p>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="pro-table">
+                            <thead>
+                                <tr>
+                                    <th data-fr="Date" data-en="Date">Date</th>
+                                    <th data-fr="Client" data-en="Customer">Client</th>
+                                    <th data-fr="Téléphone & Lieu" data-en="Phone & Location">Téléphone & Lieu</th>
+                                    <th data-fr="Articles" data-en="Items">Articles</th>
+                                    <th data-fr="Montant" data-en="Amount">Montant</th>
+                                </tr>
+                            </thead>
+                            <tbody id="proOrdersTableBody">
+                                <!-- Dynamic orders list -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 3: Settings -->
+            <div class="pro-tab-content" id="proTabSettings">
+                <div class="pro-grid-2">
+                    <!-- WhatsApp receiver -->
+                    <div class="pro-card">
+                        <div class="pro-card-header">
+                            <h3 data-fr="Paramètres Réception" data-en="Reception Settings">Paramètres Réception</h3>
+                            <p class="pro-card-subtitle" data-fr="Configurer le numéro WhatsApp de réception." data-en="Configure the receiving WhatsApp phone number."></p>
+                        </div>
+                        <form id="proSettingsForm" class="pro-form">
+                            <div class="form-group">
+                                <label for="proWaPhone" data-fr="Numéro WhatsApp (sans indicatif +)" data-en="WhatsApp Phone (no country +)">Numéro WhatsApp (sans indicatif +)</label>
+                                <input type="text" id="proWaPhone" placeholder="Ex: 22991485169" required>
+                                <span class="input-tip" data-fr="Mettre l'indicatif pays complet. Exemple pour le Bénin : 229XXXXXXXX." data-en="Include complete country prefix. Example: 229XXXXXXXX."></span>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-full">
+                                <i class="fa-solid fa-save"></i> <span data-fr="Enregistrer le contact" data-en="Save contact">Enregistrer le contact</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Dynamic promo banner CMS -->
+                    <div class="pro-card">
+                        <div class="pro-card-header">
+                            <h3 data-fr="Bandeau Promotionnel de l'Accueil" data-en="Homepage Promotional Banner">Bandeau Promotionnel de l'Accueil</h3>
+                            <p class="pro-card-subtitle" data-fr="Modifiez ou masquez en direct le bandeau promotionnel du site." data-en="Modify or hide the site's top promo banner instantly."></p>
+                        </div>
+                        <form id="proPromoForm" class="pro-form">
+                            <div class="form-group">
+                                <label for="proPromoShow" data-fr="Statut de visibilité" data-en="Visibility Status">Statut de visibilité</label>
+                                <select id="proPromoShow">
+                                    <option value="true" data-fr="Afficher le bandeau" data-en="Display banner">Afficher le bandeau</option>
+                                    <option value="false" data-fr="Masquer le bandeau" data-en="Hide banner">Masquer le bandeau</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="proPromoText" data-fr="Message de promotion" data-en="Promotional message">Message de promotion</label>
+                                <textarea id="proPromoText" rows="3" required placeholder="Ex: 10% de réduction sur tout le Couscous !"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-full">
+                                <i class="fa-solid fa-bullhorn"></i> <span data-fr="Mettre à jour la promotion" data-en="Update promotion">Mettre à jour la promotion</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand-col">
+                <a href="#" class="logo-area">
+                    <img src="images/logo.png" alt="As-Salam Production Logo" class="footer-logo">
+                    <div class="logo-text">
+                        <span class="brand-name">As-Salam</span>
+                        <span class="brand-sub">Production</span>
+                    </div>
+                </a>
+                <p class="footer-brand-desc">Valoriser la culture du maïs local béninois à travers des aliments sains, bio et riches en goût. Notre mission est d'amener de vrais délices dans vos plats.</p>
+            </div>
+            
+            <div class="footer-links-col">
+                <h4>Liens Rapides</h4>
+                <div class="footer-links">
+                    <a href="index.html">Accueil</a>
+                    <a href="index.html#about">À Propos</a>
+                    <a href="index.html#products">Nos Produits</a>
+                    <a href="index.html#recipes">Recettes</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+            </div>
+
+            <div class="footer-products-col">
+                <h4>Nos Produits</h4>
+                <div class="footer-links">
+                    <a href="index.html#products">Couscous de Maïs</a>
+                    <a href="index.html#products">Bouillie Akloui de Maïs</a>
+                    <a href="index.html#products">Riz de Maïs</a>
+                    <a href="index.html#products">Pâte Gambari</a>
+                    <a href="index.html#products">Cassoulet de Maïs</a>
+                </div>
+            </div>
+
+            <div class="footer-hours-col">
+                <h4>Horaires d'Ouverture</h4>
+                <ul class="hours-list">
+                    <li><span>Lundi - Vendredi :</span> <span>8h00 - 18h30</span></li>
+                    <li><span>Samedi :</span> <span>9h00 - 16h00</span></li>
+                    <li><span>Dimanche :</span> <span>Fermé</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-content">
+                <p>&copy; 2026 As-Salam Production. Tous droits réservés. Conçu pour la promotion de la consommation locale au Bénin.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Mentions Légales</a>
+                    <a href="#">Politique de Confidentialité</a>
+                    <a href="pro.html" data-fr="Espace Pro" data-en="Pro Space">Espace Pro</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PRODUCT EDIT OVERLAY MODAL -->
+    <div class="product-modal-overlay" id="proCatalogModal">
+        <div class="product-modal admin-login-width">
+            <button class="modal-close" id="proCatalogCloseBtn">&times;</button>
+            <div class="admin-login-body">
+                <h3 id="proModalTitle" data-fr="Modifier Fiche Produit" data-en="Edit Product Info">Modifier Fiche Produit</h3>
+                <form id="proCatalogForm" class="pro-form text-left" style="margin-top: 20px;">
+                    <input type="hidden" id="proEditId">
+                    <div class="form-group">
+                        <label for="proEditName" data-fr="Nom du produit" data-en="Product name">Nom du produit</label>
+                        <input type="text" id="proEditName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="proEditCategory" data-fr="Catégorie" data-en="Category">Catégorie</label>
+                        <select id="proEditCategory">
+                            <option value="Couscous" data-fr="Couscous" data-en="Couscous">Couscous</option>
+                            <option value="Bouillies" data-fr="Bouillies" data-en="Porridge">Bouillies</option>
+                            <option value="Riz" data-fr="Riz" data-en="Rice">Riz</option>
+                            <option value="Farines" data-fr="Farines" data-en="Flour">Farines</option>
+                            <option value="Conserves" data-fr="Conserves" data-en="Canned Food">Conserves</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="proEditPrice" data-fr="Prix (F CFA)" data-en="Price (F CFA)">Prix (F CFA)</label>
+                        <input type="number" id="proEditPrice" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="proEditStock" data-fr="Statut de Stock" data-en="Stock Status">Statut de Stock</label>
+                        <select id="proEditStock">
+                            <option value="in" data-fr="En stock" data-en="In stock">En stock</option>
+                            <option value="out" data-fr="En rupture de stock" data-en="Out of stock">En rupture de stock</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="proEditDesc" data-fr="Description" data-en="Description">Description</label>
+                        <textarea id="proEditDesc" rows="3" required style="width:100%; border: 1px solid var(--color-border); padding: 10px; border-radius: var(--radius-sm);"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-full">
+                        <i class="fa-solid fa-circle-check"></i> <span id="proSubmitBtnText" data-fr="Mettre à jour" data-en="Update">Mettre à jour</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- JS Scripts -->
+    <script src="pro.js"></script>
+</body>
+</html>
