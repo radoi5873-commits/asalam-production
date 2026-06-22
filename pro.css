@@ -5,8 +5,8 @@
 /* Hero area */
 .pro-hero {
     background: linear-gradient(135deg, var(--color-primary-light) 0%, rgba(49, 87, 44, 0.05) 100%);
-    padding: 20px 0;
-    margin-bottom: 25px;
+    padding: 35px 0;
+    margin-bottom: 35px;
     border-bottom: 1px solid var(--color-border);
 }
 .pro-hero h1 {
