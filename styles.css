@@ -2470,7 +2470,6 @@ html, body {
         gap: 12px;
         width: 100%;
         max-width: 280px;
-        margin: 0 auto;
     }
     .hero-actions .btn {
         width: 100%;
