@@ -2462,6 +2462,18 @@ body {
         font-size: 1.05rem;
         margin-bottom: 28px;
     }
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+    .hero-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
 }
 
 /* 4. Features Bar Grid Padding on Mobile */
@@ -2529,6 +2541,7 @@ body {
         letter-spacing: -0.2px;
     }
 }
+@media (max-width: 768px) {
     .recipes-nav {
         flex-wrap: wrap;
         justify-content: center;
