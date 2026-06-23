@@ -56,7 +56,7 @@
     <div id="scrollProgressBar" class="scroll-progress-bar"></div>
 
     <!-- PROMO BANNER -->
-    <div id="promoBanner" class="promo-banner">
+    <div id="promoBanner" class="promo-banner" style="display: none;">
         <div class="container promo-banner-content">
             <div class="promo-left">
                 <span class="promo-badge">PROMO !</span>
@@ -76,13 +76,35 @@
     <div id="pageLoader" class="page-loader">
         <div class="loader-content">
             <img src="images/logo.png" alt="As-Salam" class="loader-logo">
-            <div class="loader-brand">As-Salam<span>Production</span></div>
             <div class="loader-bar">
                 <div class="loader-progress"></div>
             </div>
         </div>
     </div>
-
+    <script>
+        (function() {
+            var loader = document.getElementById('pageLoader');
+            if (loader) {
+                var startTime = Date.now();
+                var hideLoader = function() {
+                    var elapsed = Date.now() - startTime;
+                    var delay = Math.max(0, 1000 - elapsed);
+                    setTimeout(function() {
+                        loader.style.opacity = '0';
+                        loader.style.visibility = 'hidden';
+                        setTimeout(function() { if (loader && loader.parentNode) loader.parentNode.removeChild(loader); }, 400);
+                    }, delay);
+                };
+                if (document.readyState === 'complete') {
+                    hideLoader();
+                } else {
+                    window.addEventListener('load', hideLoader);
+                }
+                // Safety timeout fallback (max 1.5 seconds visible)
+                setTimeout(hideLoader, 1500);
+            }
+        })();
+    </script>
     <!-- TOP BAR (INFO) -->
     <div class="top-bar">
         <div class="container top-bar-content">

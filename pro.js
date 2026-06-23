@@ -533,7 +533,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (phoneInput) phoneInput.value = savedPhone;
 
         // Promo Banner text & status
-        const savedPromoShow = localStorage.getItem('assalam_promo_banner_show') || 'true';
+        const savedPromoShow = localStorage.getItem('assalam_promo_banner_show') || 'false';
         const savedPromoText = localStorage.getItem('assalam_promo_banner_text') || '10% de réduction sur le Couscous de Maïs avec le code SALAM10 !';
         
         const promoShowInput = document.getElementById('proPromoShow');
@@ -560,6 +560,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             localStorage.setItem('assalam_promo_banner_show', showPromo);
             localStorage.setItem('assalam_promo_banner_text', promoText);
+            
+            // Clear the closed state so the banner displays again to all users when modified
+            localStorage.removeItem('assalam_promo_closed');
 
             showToast(currentLang === 'fr' ? 'Bandeau promotionnel mis à jour !' : 'Promo banner successfully updated!', 'success');
         });

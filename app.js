@@ -270,10 +270,6 @@ document.addEventListener('DOMContentLoaded', () => {
        ========================================================================== */
     const orderForm = document.getElementById('orderForm');
     // (WhatsApp phone number is managed from Espace Pro and loaded automatically above);
-    const savedPhone = localStorage.getItem('assalam_wa_phone');
-    if (savedPhone) {
-        document.querySelectorAll('.phone-text, .contact-info-item:nth-child(1) p').forEach(el => el.textContent = savedPhone);
-    }
 
     function cleanPhoneNumber(numberStr) {
         // Strip everything except numbers
@@ -488,29 +484,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* ==========================================================================
-       13. PAGE LOADER
-       ========================================================================== */
-    const loader = document.getElementById('pageLoader');
-    if (loader) {
-        const hideLoader = () => {
-            loader.classList.add('hidden');
-            setTimeout(() => loader.remove(), 300);
-        };
-        
-        let loaderHidden = false;
-        const triggerHide = () => {
-            if (loaderHidden) return;
-            loaderHidden = true;
-            hideLoader();
-        };
 
-        // Safety timeout: hide loader after 300ms maximum to prevent stuck screen and feel faster
-        setTimeout(triggerHide, 300);
-
-        // Also hide immediately if the page resources load faster
-        window.addEventListener('load', triggerHide);
-    }
 
     /* ==========================================================================
        14. BACK TO TOP BUTTON
@@ -1152,19 +1126,20 @@ document.addEventListener('DOMContentLoaded', () => {
     function applyPromoOverrides() {
         const promoBanner = document.getElementById('promoBanner');
         const promoText = document.querySelector('.promo-text');
-        const showPromo = localStorage.getItem('assalam_promo_banner_show');
+        const showPromo = localStorage.getItem('assalam_promo_banner_show') || 'false';
         const customText = localStorage.getItem('assalam_promo_banner_text');
+        const isClosed = localStorage.getItem('assalam_promo_closed') === 'true';
 
         if (promoBanner) {
-            if (showPromo === 'false') {
-                promoBanner.style.display = 'none';
-            } else {
+            if (showPromo === 'true' && !isClosed) {
                 promoBanner.style.display = 'block';
                 if (customText && promoText) {
                     promoText.textContent = customText;
                     promoText.setAttribute('data-fr', customText);
                     promoText.setAttribute('data-en', customText);
                 }
+            } else {
+                promoBanner.style.display = 'none';
             }
         }
     }
