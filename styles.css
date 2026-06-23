@@ -49,6 +49,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: hidden;
 }
 
 body {
@@ -102,6 +103,7 @@ button, input, textarea {
 
 .section {
     padding: 100px 0;
+    overflow: hidden;
 }
 
 .bg-light {
@@ -712,8 +714,8 @@ button, input, textarea {
     }
 
     .about-floating-card {
-        bottom: -20px;
-        right: -10px;
+        bottom: 15px;
+        right: 15px;
         padding: 20px;
     }
 
@@ -2404,7 +2406,7 @@ body.dark-mode .form-group input, body.dark-mode .form-group textarea { backgrou
    ========================================================================== */
 
 /* 1. Prevent Horizontal Page Scroll & Fix Containers */
-body {
+html, body {
     overflow-x: hidden;
     width: 100%;
 }
